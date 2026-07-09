@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Niko Management Limited — Premium Personal & Corporate Lifestyle Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@1,400;1,600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0f5ff',
+                            100: '#e0ebff',
+                            500: '#2563eb',
+                            600: '#1d4ed8',
+                            700: '#1e40af',
+                            900: '#1e1b4b',
+                            darkBg: '#0f172a'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .custom-gradient {
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.9) 100%);
+        }
+        .hero-bg {
+            background-image: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.85)), url('https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        @keyframes ticker {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-ticker {
+            display: flex;
+            width: max-content;
+            animation: ticker 30s linear infinite;
+        }
+        .animate-ticker:hover {
+            animation-play-state: paused;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased">
+
+    <header class="fixed w-full top-0 z-40 bg-brand-darkBg/95 backdrop-blur-md border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#hero" class="flex items-center space-x-3">
+                <span class="text-white font-extrabold text-xl tracking-wider">NIKO<span class="text-brand-500">MANAGEMENT</span></span>
+            </a>
+            
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#about" class="text-slate-300 hover:text-white transition-colors duration-300 text-sm font-medium">About Us</a>
+                <a href="#services" class="text-slate-300 hover:text-white transition-colors duration-300 text-sm font-medium">Our Services</a>
+                <a href="#benefits" class="text-slate-300 hover:text-white transition-colors duration-300 text-sm font-medium">Why Us</a>
+                <a href="#process" class="text-slate-300 hover:text-white transition-colors duration-300 text-sm font-medium">Our Process</a>
+                <a href="#contacts" class="text-slate-300 hover:text-white transition-colors duration-300 text-sm font-medium">Contacts</a>
+            </nav>
+
+            <button onclick="openModal()" class="bg-brand-500 hover:bg-brand-600 text-white font-semibold text-sm px-6 py-3 rounded-full transition-all duration-300 shadow-lg shadow-brand-500/20 active:scale-95">
+                Get Consultation
+            </button>
+        </div>
+    </header>
+
+    <section id="hero" class="hero-bg min-h-screen pt-28 flex items-center text-white relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-brand-darkBg via-transparent to-transparent opacity-90"></div>
+        <div class="max-w-7xl mx-auto px-6 py-20 relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-7 space-y-8">
+                <div class="inline-flex items-center space-x-2 bg-brand-500/10 border border-brand-500/30 px-4 py-2 rounded-full">
+                    <span class="w-2 h-2 rounded-full bg-brand-500 animate-pulse"></span>
+                    <span class="text-brand-500 text-xs font-bold uppercase tracking-widest">// Experience The Best Personal Solutions</span>
+                </div>
+                
+                <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-tight">
+                    Where Creativity Meets <br class="hidden sm:inline">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-300">Personal Management</span>
+                </h1>
+                
+                <p class="text-slate-300 text-lg max-w-xl leading-relaxed">
+                    We specialize in high-end personal assistance, bespoke corporate management, and individual support systems. Operating from the heart of Dublin to deliver world-class comfort and perfect execution for your daily routine.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-4">
+                    <button onclick="openModal()" class="bg-brand-500 hover:bg-brand-600 text-white font-bold px-8 py-4 rounded-full transition-all duration-300 text-center shadow-lg shadow-brand-500/30 active:scale-95 flex items-center justify-center space-x-2">
+                        <span>Explore More</span>
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </button>
+                    <a href="#services" class="border border-slate-700 hover:border-slate-500 bg-white/5 hover:bg-white/10 text-white font-bold px-8 py-4 rounded-full transition-all duration-300 text-center flex items-center justify-center">
+                        View All Services
+                    </a>
+                </div>
+            </div>
+
+            <div class="lg:col-span-5 hidden lg:block">
+                <div class="relative">
+                    <div class="absolute -inset-1 rounded-2xl bg-gradient-to-r from-brand-500 to-indigo-500 opacity-30 blur-xl"></div>
+                    <div class="relative bg-slate-900/80 border border-slate-700/50 p-8 rounded-2xl backdrop-blur-md">
+                        <div class="flex items-center space-x-4 mb-6">
+                            <div class="w-12 h-12 rounded-full bg-brand-500/20 flex items-center justify-center">
+                                <svg class="w-6 h-6 text-brand-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-lg">Fully Licensed Partner</h4>
+                                <p class="text-xs text-slate-400">Registered Dublin Entity</p>
+                            </div>
+                        </div>
+                        <p class="text-sm text-slate-300 leading-relaxed">
+                            "Niko Management Limited ensures your physical, organizational, and digital spaces are maintained with absolute precision, total discretion, and tailored attention."
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="bg-brand-500 py-6 overflow-hidden border-y border-brand-600 shadow-inner">
+        <div class="relative w-full overflow-hidden">
+            <div class="animate-ticker text-white font-bold tracking-widest text-sm uppercase flex items-center gap-12">
+                <span>Personal Management Services</span>
+                <span class="text-brand-200">★</span>
+                <span>Lifestyle Concierge</span>
+                <span class="text-brand-200">★</span>
+                <span>Niko Management Limited</span>
+                <span class="text-brand-200">★</span>
+                <span>Premium Quality Care</span>
+                <span class="text-brand-200">★</span>
+                <span>Dublin HQ Solutions</span>
+                <span class="text-brand-200">★</span>
+                <span>Personal Management Services</span>
+                <span class="text-brand-200">★</span>
+                <span>Lifestyle Concierge</span>
+                <span class="text-brand-200">★</span>
+                <span>Niko Management Limited</span>
+                <span class="text-brand-200">★</span>
+                <span>Premium Quality Care</span>
+                <span class="text-brand-200">★</span>
+                <span>Dublin HQ Solutions</span>
+                <span class="text-brand-200">★</span>
+            </div>
+        </div>
+    </div>
+
+    <section id="about" class="py-24 bg-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+                
+                <div class="lg:col-span-6 grid grid-cols-2 gap-6">
+                    <div class="space-y-6">
+                        <div class="rounded-3xl overflow-hidden shadow-xl aspect-[4/5]">
+                            <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=600&q=80" alt="Team meeting" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="rounded-3xl overflow-hidden shadow-xl aspect-square bg-brand-500 p-8 text-white flex flex-col justify-between">
+                            <span class="text-sm font-bold tracking-widest uppercase opacity-80">// Verified Office</span>
+                            <div>
+                                <h4 class="text-2xl font-bold mb-1">D01 AH28</h4>
+                                <p class="text-xs text-blue-100">Henrietta Place, Dublin</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="space-y-6 pt-12">
+                        <div class="rounded-3xl overflow-hidden shadow-xl aspect-square bg-slate-900 p-8 text-white flex flex-col justify-between">
+                            <div class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center">
+                                <span class="text-brand-500 font-bold text-xl">N</span>
+                            </div>
+                            <p class="text-sm text-slate-300">Exquisite hospitality meets state-of-the-art organizational logic.</p>
+                        </div>
+                        <div class="rounded-3xl overflow-hidden shadow-xl aspect-[4/5]">
+                            <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=600&q=80" alt="Executive" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-6 space-y-8">
+                    <div class="space-y-4">
+                        <span class="text-brand-500 text-sm font-bold uppercase tracking-widest block">// About Us</span>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 leading-tight">
+                            Transforming <span class="text-brand-500">Ideas</span> <br>
+                            into Digital & Lifestyle Reality
+                        </h2>
+                    </div>
+                    
+                    <div class="space-y-6 text-slate-600 leading-relaxed">
+                        <p>
+                            NIKO MANAGEMENT LIMITED is an elite lifestyle management and corporate support agency based in Dublin, Ireland. We design and coordinate custom operational infrastructures for entrepreneurs, busy professionals, and creative minds who value their time and require uncompromised service quality.
+                        </p>
+                        <p>
+                            Our core mission is to release clients from the weight of daily logistics, organizational routines, and routine personal maintenance. By combining cutting-edge digital tracking with traditional premium hospitality principles, we create an environment where your ideas can flourish, and your lifestyle is polished to absolute perfection.
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-3 gap-6 pt-6 border-t border-slate-100">
+                        <div>
+                            <p class="text-4xl font-extrabold text-brand-500">150+</p>
+                            <p class="text-xs text-slate-500 uppercase tracking-wider font-semibold mt-1">Corporate Clients</p>
+                        </div>
+                        <div>
+                            <p class="text-4xl font-extrabold text-brand-500">2000+</p>
+                            <p class="text-xs text-slate-500 uppercase tracking-wider font-semibold mt-1">Completed Goals</p>
+                        </div>
+                        <div>
+                            <p class="text-4xl font-extrabold text-brand-500">99%</p>
+                            <p class="text-xs text-slate-500 uppercase tracking-wider font-semibold mt-1">Satisfaction Rate</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center space-x-4 pt-6">
+                        <div class="border-l-4 border-brand-500 pl-4">
+                            <span class="font-serif italic text-xl text-slate-800 block">"Jenny Alexander"</span>
+                            <span class="text-xs text-slate-500 font-semibold uppercase tracking-wider">Jenny Alexander • CEO, Niko Management</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-24 bg-slate-100 border-y border-slate-200">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6">
+                <div>
+                    <span class="text-brand-500 text-sm font-bold uppercase tracking-widest block mb-3">// Our Services</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900">
+                        Bespoke Solutions to <br>
+                        Elevate Your Daily Operations
+                    </h2>
+                </div>
+                <button onclick="openModal()" class="bg-brand-500 hover:bg-brand-600 text-white font-bold px-8 py-3.5 rounded-full transition-all duration-300 shadow-md shadow-brand-500/10 active:scale-95 whitespace-nowrap">
+                    View All Services
+                </button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-200/60 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between">
+                    <div class="space-y-6">
+                        <div class="w-14 h-14 rounded-2xl bg-brand-500/10 flex items-center justify-center">
+                            <svg class="w-7 h-7 text-brand-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900">Corporate Infrastructure Management</h3>
+                        <p class="text-slate-600 leading-relaxed text-sm">
+                            We take complete control of your corporate administrative routines, coordinating high-level operational tasking and optimizing workflows. Our experienced team sets up seamless, secure digital communication and cloud systems for maximum productivity. Let us handle administrative burden while you focus entirely on scaling your core business.
+                        </p>
+                    </div>
+                    <button onclick="openModal()" class="mt-8 text-brand-500 font-bold text-sm flex items-center space-x-2 hover:text-brand-600 transition-colors">
+                        <span>Request Service</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </button>
+                </div>
+
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-200/60 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between">
+                    <div class="space-y-6">
+                        <div class="w-14 h-14 rounded-2xl bg-brand-500/10 flex items-center justify-center">
+                            <svg class="w-7 h-7 text-brand-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900">Elite Lifestyle Concierge</h3>
+                        <p class="text-slate-600 leading-relaxed text-sm">
+                            Exclusive personal assistance designed to curate and manage your premium lifestyle needs with extreme confidentiality. From organizing complex multi-destination travel itineraries to securing access to fully booked top-tier venues globally. We ensure all personal errands are executed flawlessly, maintaining total focus on your comfort.
+                        </p>
+                    </div>
+                    <button onclick="openModal()" class="mt-8 text-brand-500 font-bold text-sm flex items-center space-x-2 hover:text-brand-600 transition-colors">
+                        <span>Request Service</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </button>
+                </div>
+
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-200/60 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between">
+                    <div class="space-y-6">
+                        <div class="w-14 h-14 rounded-2xl bg-brand-500/10 flex items-center justify-center">
+                            <svg class="w-7 h-7 text-brand-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900">Event & Hospitality Consulting</h3>
+                        <p class="text-slate-600 leading-relaxed text-sm">
+                            Custom design and end-to-end organizational assistance for both high-level business summits and boutique private gatherings. Our specialists carefully manage venue selection, contract negotiations, guest communication, and overall event aesthetics on-site. We craft unforgettable hospitality experiences that align perfectly with your unique vision.
+                        </p>
+                    </div>
+                    <button onclick="openModal()" class="mt-8 text-brand-500 font-bold text-sm flex items-center space-x-2 hover:text-brand-600 transition-colors">
+                        <span>Request Service</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="benefits" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16 space-y-4">
+                <span class="text-brand-500 text-sm font-bold uppercase tracking-widest block">// Our Competitive Edge</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900">Why Global Leaders Entrust Us With Their Routine</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                
+                <div class="space-y-4 border-l-2 border-brand-500 pl-6 py-2">
+                    <h3 class="text-lg font-bold text-slate-900">Total Legal Compliance & Security</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Niko Management Limited is registered in Dublin, Ireland, conforming to strict EU regulatory standards. We process client information with the highest digital security measures, ensuring non-disclosure and absolute data protection.
+                    </p>
+                </div>
+
+                <div class="space-y-4 border-l-2 border-brand-500 pl-6 py-2">
+                    <h3 class="text-lg font-bold text-slate-900">Bespoke Adaptive Approach</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        We don't believe in generic subscription templates. Every workflow, concierge task, and corporate schedule is hand-tailored to fit your rhythm, ensuring that you receive adaptive management built precisely for you.
+                    </p>
+                </div>
+
+                <div class="space-y-4 border-l-2 border-brand-500 pl-6 py-2">
+                    <h3 class="text-lg font-bold text-slate-900">Direct Local & Global Network</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Through long-established connections with luxury services, logistics operators, and hospitality leaders worldwide, we provide unparalleled solutions rapidly. If a resource exists, we can coordinate and secure it.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="process" class="py-24 bg-brand-darkBg text-white relative overflow-hidden">
+        <div class="absolute inset-0 bg-slate-950/40"></div>
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            
+            <div class="text-center max-w-2xl mx-auto mb-20 space-y-4">
+                <span class="text-brand-500 text-sm font-bold uppercase tracking-widest block">// Strategic Framework</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold">Our Proven Work Process</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 relative">
+                
+                <div class="absolute top-1/2 left-0 right-0 h-0.5 bg-slate-800 hidden md:block -translate-y-8 z-0"></div>
+
+                <div class="relative z-10 space-y-6 text-center group">
+                    <div class="w-16 h-16 rounded-full bg-brand-500 text-white flex items-center justify-center font-bold text-xl mx-auto shadow-lg shadow-brand-500/30 group-hover:scale-110 transition-transform duration-300">
+                        01
+                    </div>
+                    <div class="space-y-2">
+                        <h3 class="text-xl font-bold">Deep Assessment Consultation</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed max-w-xs mx-auto">
+                            We analyze your current personal or corporate workload, outlining bottlenecks, schedule inefficiencies, and key lifestyle priorities.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="relative z-10 space-y-6 text-center group">
+                    <div class="w-16 h-16 rounded-full bg-brand-500 text-white flex items-center justify-center font-bold text-xl mx-auto shadow-lg shadow-brand-500/30 group-hover:scale-110 transition-transform duration-300">
+                        02
+                    </div>
+                    <div class="space-y-2">
+                        <h3 class="text-xl font-bold">Custom Strategy Integration</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed max-w-xs mx-auto">
+                            Our team structures a personalized support protocol, establishing key digital interfaces and dedicated support staff matching your lifestyle profile.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="relative z-10 space-y-6 text-center group">
+                    <div class="w-16 h-16 rounded-full bg-brand-500 text-white flex items-center justify-center font-bold text-xl mx-auto shadow-lg shadow-brand-500/30 group-hover:scale-110 transition-transform duration-300">
+                        03
+                    </div>
+                    <div class="space-y-2">
+                        <h3 class="text-xl font-bold">Flawless Ongoing Execution</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed max-w-xs mx-auto">
+                            Experience immediate lifestyle relief. We handle tasks, manage schedules, and resolve inquiries 24/7 with zero distraction to you.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <div class="bg-brand-500 py-6 overflow-hidden border-y border-brand-600 shadow-inner">
+        <div class="relative w-full overflow-hidden">
+            <div class="animate-ticker text-white font-bold tracking-widest text-sm uppercase flex items-center gap-12">
+                <span>Personal Management Services</span>
+                <span class="text-brand-200">★</span>
+                <span>Lifestyle Concierge</span>
+                <span class="text-brand-200">★</span>
+                <span>Niko Management Limited</span>
+                <span class="text-brand-200">★</span>
+                <span>Premium Quality Care</span>
+                <span class="text-brand-200">★</span>
+                <span>Dublin HQ Solutions</span>
+                <span class="text-brand-200">★</span>
+                <span>Personal Management Services</span>
+                <span class="text-brand-200">★</span>
+                <span>Lifestyle Concierge</span>
+                <span class="text-brand-200">★</span>
+                <span>Niko Management Limited</span>
+                <span class="text-brand-200">★</span>
+                <span>Premium Quality Care</span>
+                <span class="text-brand-200">★</span>
+                <span>Dublin HQ Solutions</span>
+                <span class="text-brand-200">★</span>
+            </div>
+        </div>
+    </div>
+
+    <section id="contacts" class="py-24 bg-slate-900 text-white relative">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+            
+            <div class="lg:col-span-6 space-y-8">
+                <div class="space-y-4">
+                    <span class="text-brand-500 text-sm font-bold uppercase tracking-widest block">// Connect With Us</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold">Ready to Reclaim Your Valuable Time?</h2>
+                    <p class="text-slate-400 text-base leading-relaxed">
+                        Submit a confidential inquiry, and our lifestyle coordinators will reach out to you within 2 hours to conduct an initial discrete assessment of your needs.
+                    </p>
+                </div>
+
+                <div class="space-y-6 pt-4 border-t border-slate-800">
+                    <div class="flex items-start space-x-4">
+                        <div class="w-12 h-12 rounded-xl bg-slate-800 flex items-center justify-center flex-shrink-0">
+                            <svg class="w-6 h-6 text-brand-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        </div>
+                        <div>
+                            <span class="text-slate-400 text-xs font-semibold uppercase tracking-wider block">Official Corporate Email</span>
+                            <a href="mailto:cusmail@nikomanagment.org" class="text-white hover:text-brand-500 font-bold transition-colors">cusmail@nikomanagment.org</a>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start space-x-4">
+                        <div class="w-12 h-12 rounded-xl bg-slate-800 flex items-center justify-center flex-shrink-0">
+                            <svg class="w-6 h-6 text-brand-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                        </div>
+                        <div>
+                            <span class="text-slate-400 text-xs font-semibold uppercase tracking-wider block">Headquarters Address</span>
+                            <p class="text-white font-medium">Apartment 39, Block C the Court Henrietta Place, Dublin 1 DUBLIN, D01 AH28 Ireland</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:col-span-6 bg-slate-800/50 p-8 rounded-3xl border border-slate-700/60 backdrop-blur-sm">
+                <h3 class="text-xl font-bold mb-6 text-white">Send a Discrete Request</h3>
+                <form id="contactFormFooter" class="space-y-5" onsubmit="handleFormSubmit(event)">
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Your Full Name</label>
+                        <input type="text" required class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 transition-all" placeholder="E.g., Jonathan Vance">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Corporate Email Address</label>
+                        <input type="email" required class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 transition-all" placeholder="E.g., vance@corporate.com">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Operational Goal / Service Category</label>
+                        <select required class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 transition-all">
+                            <option value="">Select primary objective</option>
+                            <option value="corporate">Corporate Management</option>
+                            <option value="lifestyle">Lifestyle Concierge</option>
+                            <option value="hospitality">Hospitality & Event Consulting</option>
+                            <option value="other">Other Personal Services</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Brief Context of Your Request</label>
+                        <textarea rows="4" required class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 transition-all" placeholder="Please outline the type of management or support required..."></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-brand-500 hover:bg-brand-600 text-white font-bold py-4 rounded-xl transition-all duration-300 shadow-lg shadow-brand-500/20 active:scale-[0.98]">
+                        Submit Invitation
+                    </button>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="bg-brand-darkBg text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="text-center md:text-left">
+                <p class="font-bold text-white tracking-wider text-sm">NIKO MANAGEMENT LIMITED</p>
+                <p class="text-xs mt-1">Company Registration No. Dublin, Ireland</p>
+            </div>
+            <p class="text-xs text-center md:text-right">
+                &copy; 2026 NIKO MANAGEMENT LIMITED. All rights reserved. <br class="hidden sm:inline"> Fully compliant with global privacy and personal data protection regulations.
+            </p>
+        </div>
+    </footer>
+
+    <div id="modal" class="fixed inset-0 z-50 hidden bg-brand-darkBg/80 backdrop-blur-md flex items-center justify-center p-4 transition-opacity duration-300">
+        <div class="bg-white rounded-3xl w-full max-w-lg p-8 shadow-2xl relative border border-slate-200 transform scale-95 transition-transform duration-300" id="modalContainer">
+            <button onclick="closeModal()" class="absolute top-6 right-6 text-slate-400 hover:text-slate-600 transition-colors">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+            <div class="space-y-4 mb-6">
+                <h3 class="text-2xl font-bold text-slate-900">Bespoke Support Inquiry</h3>
+                <p class="text-slate-500 text-sm">Fill in the fields below and our specialist will respond shortly. Strictly confidential. No phone needed.</p>
+            </div>
+            <form id="modalForm" class="space-y-4" onsubmit="handleFormSubmit(event)">
+                <div>
+                    <label class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-2">Your Name</label>
+                    <input type="text" required class="w-full border border-slate-300 rounded-xl px-4 py-3 text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-all" placeholder="John Vance">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-2">Corporate Email</label>
+                    <input type="email" required class="w-full border border-slate-300 rounded-xl px-4 py-3 text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-all" placeholder="vance@corporate.com">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-2">Select Management Sector</label>
+                    <select required class="w-full border border-slate-300 rounded-xl px-4 py-3 text-slate-700 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-all">
+                        <option value="">Select Option</option>
+                        <option value="corporate">Corporate Operations</option>
+                        <option value="lifestyle">Lifestyle Concierge</option>
+                        <option value="hospitality">Events Consulting</option>
+                        <option value="other">Other Personal Services</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-2">Your Message</label>
+                    <textarea rows="3" required class="w-full border border-slate-300 rounded-xl px-4 py-3 text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-all" placeholder="Describe your request..."></textarea>
+                </div>
+                <button type="submit" class="w-full bg-brand-500 hover:bg-brand-600 text-white font-bold py-4 rounded-xl transition-all duration-300 shadow-lg shadow-brand-500/20 active:scale-[0.98]">
+                    Send Request
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <div id="successToast" class="fixed bottom-6 right-6 z-50 hidden bg-slate-900 border border-slate-800 text-white px-6 py-5 rounded-2xl shadow-2xl max-w-md transition-all duration-300 transform translate-y-10">
+        <div class="flex items-start space-x-4">
+            <div class="w-10 h-10 rounded-full bg-emerald-500/10 flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+            </div>
+            <div>
+                <h4 class="font-bold text-sm text-white">Inquiry Successfully Registered</h4>
+                <p class="text-slate-400 text-xs mt-1 leading-relaxed">
+                    Thank you! Your information was securely received. Our concierge executive is analyzing your request. A formal email response will be sent to your inbox shortly.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const modal = document.getElementById('modal');
+        const modalContainer = document.getElementById('modalContainer');
+        const successToast = document.getElementById('successToast');
+
+        function openModal() {
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                modal.classList.add('opacity-100');
+                modalContainer.classList.remove('scale-95');
+                modalContainer.classList.add('scale-100');
+            }, 10);
+        }
+
+        function closeModal() {
+            modalContainer.classList.remove('scale-100');
+            modalContainer.classList.add('scale-95');
+            modal.classList.remove('opacity-100');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300);
+        }
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            
+            closeModal();
+            event.target.reset();
+
+            showSuccessToast();
+        }
+
+        function showSuccessToast() {
+            successToast.classList.remove('hidden');
+            setTimeout(() => {
+                successToast.classList.remove('translate-y-10');
+                successToast.classList.add('translate-y-0');
+            }, 10);
+
+            setTimeout(() => {
+                successToast.classList.remove('translate-y-0');
+                successToast.classList.add('translate-y-10');
+                setTimeout(() => {
+                    successToast.classList.add('hidden');
+                }, 300);
+            }, 6000);
+        }
+    </script>
+</body>
+</html>
